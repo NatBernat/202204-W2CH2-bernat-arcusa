@@ -42,4 +42,76 @@ describe("Given potential same values for 'a' and 'b'", () => {
       expect(result).toBe(expectedResult);
     });
   });
+
+  describe("When 'a' and 'b' are compared", () => {
+    test("Then it should return 'true'", () => {
+      const a = 0;
+      const b = -0;
+      expectedResult = true;
+
+      result = strictEquals(a, b);
+
+      expect(result).toBe(expectedResult);
+    });
+  });
+
+  describe("When 'a' and 'b' are compared", () => {
+    test("Then it should return 'true'", () => {
+      const a = -0;
+      const b = 0;
+      expectedResult = true;
+
+      result = strictEquals(a, b);
+
+      expect(result).toBe(expectedResult);
+    });
+  });
+
+  describe("When 'a' and 'b' are compared", () => {
+    test("Then it should return 'false'", () => {
+      const a = 1;
+      const b = "1";
+      expectedResult = false;
+
+      result = strictEquals(a, b);
+
+      expect(result).toBe(expectedResult);
+    });
+  });
+
+  describe("When 'a' and 'b' are compared", () => {
+    test("Then it should return 'false'", () => {
+      const a = true;
+      const b = false;
+      expectedResult = false;
+
+      result = strictEquals(a, b);
+
+      expect(result).toBe(expectedResult);
+    });
+  });
+
+  describe("When 'a' and 'b' are compared", () => {
+    test("Then it should return 'true'", () => {
+      const a = false;
+      const b = false;
+      expectedResult = true;
+
+      result = strictEquals(a, b);
+
+      expect(result).toBe(expectedResult);
+    });
+  });
+
+  describe("When 'a' and 'b' are compared", () => {
+    test("Then it should return 'false'", () => {
+      const a = "water";
+      const b = "oil";
+      expectedResult = false;
+
+      result = strictEquals(a, b);
+
+      expect(result).toBe(expectedResult);
+    });
+  });
 });
